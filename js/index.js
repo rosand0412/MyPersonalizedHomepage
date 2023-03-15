@@ -61,7 +61,7 @@ document.addEventListener('DOMContentLoaded', () => {
     let dayText = document.getElementById("day");
     let monthText = document.getElementById("month");
     let yearText = document.getElementById("year");
-    dayText.textContent = hoy.getDay();
+    dayText.textContent = hoy.getDate();
     monthText.textContent = getMonthSpanish(hoy.getMonth());
     yearText.textContent = hoy.getFullYear();
 
