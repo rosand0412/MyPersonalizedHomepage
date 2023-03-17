@@ -6,7 +6,7 @@ const startSearch = () => {
 }
 
 const getMonthSpanish = (numbMonth) => {
-    switch(numbMonth) {
+    switch (numbMonth) {
         case 0:
             return "enero";
         case 1:
@@ -43,8 +43,14 @@ const greet = (hour) => {
     } else {
         greet = "Buenas tardes";
     }
-
     return greet;
+}
+
+const addCero = (minutes) => {
+    if (minutes >= 1 && minutes <= 9) {
+        return "0" + minutes;
+    }
+    return minutes;
 }
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -55,7 +61,9 @@ document.addEventListener('DOMContentLoaded', () => {
     
     //related to hour
     let clockText = document.getElementById("clock");
-    clockText.textContent = hoy.getHours() + ":" + hoy.getMinutes();
+    let hours = hoy.getHours();
+    let minutes = addCero(hoy.getMinutes());
+    clockText.textContent = hours + ":" + minutes;
 
     //related to date
     let dayText = document.getElementById("day");
@@ -78,6 +86,5 @@ document.addEventListener('DOMContentLoaded', () => {
     btnSearch.addEventListener('click', () => {
         startSearch();
     });
-
-
 });
+
