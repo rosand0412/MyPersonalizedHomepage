@@ -47,7 +47,7 @@ const greet = (hour) => {
 }
 
 const addCero = (minutes) => {
-    if (minutes >= 1 && minutes <= 9) {
+    if (minutes >= 0 && minutes <= 9) {
         return "0" + minutes;
     }
     return minutes;
